@@ -10,7 +10,10 @@
     "massive": "^5.2.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.5"
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5",
+    "redux": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,5 +21,13 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "main": "./server/index.js"
+  "main": "./server/index.js",
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3030"
+    },
+    "/auth/callback": {
+      "target": "http://localhost:3030"
+    }
+  }
 }
